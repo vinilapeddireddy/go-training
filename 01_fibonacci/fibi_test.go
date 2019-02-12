@@ -8,25 +8,34 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-
-func Test_Fib_negativeValue(t *testing.T) {
+//To test fibonacci function when n=0
+func TestFibi_1(t *testing.T) {
+	// Given
 	r := require.New(t)
 	var buf bytes.Buffer
 	out = &buf
-	fibonacci(-1)
-    // Then
-	expected := strconv.Quote("1")
+
+	// When
+	fibonacci(1)
+
+	// Then
+	expected := strconv.Quote("1\n")
 	actual := strconv.Quote(buf.String())
 	r.Equalf(expected, actual, "Unexpected output in main()")
 }
 
-func Test_Fib_1(t *testing.T) {
+//To test fibonacci function n=-1
+func TestFibi_NegativeValues(t *testing.T) {
+	// Given
 	r := require.New(t)
 	var buf bytes.Buffer
 	out = &buf
-	fibonacci(1)
-    // Then
-	expected := strconv.Quote("1")
+
+	// When
+	fibonacci(-1)
+
+	// Then
+	expected := strconv.Quote("")
 	actual := strconv.Quote(buf.String())
 	r.Equalf(expected, actual, "Unexpected output in main()")
 }
