@@ -10,14 +10,15 @@ var out io.Writer = os.Stdout
 
 //prints the fibonacci series
 func fibonacci(n int) {
-	a, b := 0, 1
-
-	for i := 0; i <= n; i++ {
-		if a >= 1 {
+	a, b := 1, 1
+	if n >=1 {
+		for i := 1; i <= n; i++ {
 			fmt.Fprintln(out, a)
+			a, b = b, (a + b)
 		}
-		a, b = b, (a + b)
-	}
+  	} else {
+		 Log.e 
+	  }
 }
 
 func main() {
